@@ -1,0 +1,101 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CRUD Data Siswa</title>
+  <link rel="stylesheet" href="globals.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <header class="navbar">
+    <div class="container nav-content">
+      <h1>Data Siswa</h1>
+      <span>Sistem Informasi Siswa</span>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="intro">
+      <div>
+        <h2>Daftar Siswa</h2>
+        <p>Kelola data siswa dengan mudah.</p>
+      </div>
+      <div class="total-card">
+        Total Siswa
+        <strong id="totalSiswa">0</strong>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h3 id="formTitle">Tambah Siswa</h3>
+
+      <form id="siswaForm">
+        <input type="hidden" id="siswaId">
+
+        <div class="form-grid">
+          <div class="field">
+            <label for="nama">Nama Lengkap</label>
+            <input id="nama" maxlength="100" required
+              placeholder="Masukkan nama siswa">
+          </div>
+
+          <div class="field">
+            <label for="kelas">Kelas</label>
+            <input id="kelas" maxlength="50" required
+              placeholder="Contoh: XI PPLG 1">
+          </div>
+
+          <div class="field">
+            <label for="jurusan">Jurusan</label>
+            <input id="jurusan" maxlength="100" required
+              placeholder="Contoh: PPLG">
+          </div>
+        </div>
+
+        <div class="form-actions">
+          <button class="btn btn-primary" type="submit" id="submitBtn">
+            Simpan Data
+          </button>
+          <button class="btn btn-secondary" type="button"
+            id="cancelBtn" hidden>
+            Batal Edit
+          </button>
+        </div>
+      </form>
+
+      <p id="pesan" role="status" aria-live="polite"></p>
+    </section>
+
+    <section class="panel">
+      <div class="table-heading">
+        <h3>Data Siswa</h3>
+        <input id="search" type="search"
+          placeholder="Cari nama, kelas, jurusan...">
+      </div>
+
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>No.</th>
+              <th>Nama</th>
+              <th>Kelas</th>
+              <th>Jurusan</th>
+              <th>Aksi</th>
+            </tr>
+          </thead>
+          <tbody id="dataSiswa">
+            <tr>
+              <td colspan="5">Memuat data...</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <footer>CRUD Data Siswa &copy; 2026</footer>
+</body>
+</html>
